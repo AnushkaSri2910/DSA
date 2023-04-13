@@ -1,0 +1,16 @@
+class Student{
+    static void nearestSmaller(int arr[], int n) {
+        Stack<Integer> stk=new Stack<>();
+        for (int i=0;i<n;i++) {
+            while (!stk.empty() && stk.peek() >= arr[i]) {
+                stk.pop();
+            }
+            if (stk.empty()) {
+                System.out.print("_, ");
+            } else 
+            {
+                System.out.print(stk.peek() + ", ");
+            }
+            S.push(arr[i]);
+        }
+    }
