@@ -1,0 +1,32 @@
+class Solution {
+    public int totalFruit(int[] fruits) {
+   
+        int count[] = new int [fruits.length];//frequency array
+
+        int type = 0;
+
+        int max = 0;
+        int currmax = 0;
+        int s = 0;
+
+        for(int i = 0; i < fruits.length; i++){
+            if(count[fruits[i]]==0){
+                type++;
+            }
+            count[fruits[i]]++;
+            currmax++;
+            while(type > 2 && s < i){
+
+                count[fruits[s]]--;
+                if(count[fruits[s]] == 0){
+                    type--;
+                }
+               
+                s++;
+                currmax--;
+            }
+            max = Math.max(max,currmax);
+        }
+        return max;
+    }
+}     
