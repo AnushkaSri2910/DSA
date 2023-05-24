@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Solution
+{
+public static void main(String[] args)
+{
+int n;
+Scanner s = new Scanner(System. in);
+    n=s.nextInt();
+    solve(n);
+  }
+
+  public static void solve(int n) {
+    if (n == 0) return;
+
+    System.out.print( n + " ");
+    solve(n - 1);
+    System.out.print(n + " ");
+  }
+}
